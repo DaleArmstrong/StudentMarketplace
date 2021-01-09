@@ -1,0 +1,146 @@
+/* center main content */
+.custom-box {
+    display: block;
+    width: 65%;
+    max-width: 1600px;
+    padding: 25px;
+    margin: auto;
+}
+
+/* for small screens use all space */
+@media screen and (max-width: 1200px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .custom-box {
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+    }
+}
+
+/* main header */
+main {
+    display: grid;
+    background-color: #343a40;
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px 2px black;
+}
+
+.modal-content {
+    background-color: #343a40;
+    color: #FFFFFF;
+}
+
+#main-header {
+    color: white;
+    background-color: #23272a;
+    border-bottom: 1px solid #343a40;
+    width: 100%;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+}
+
+#main-header .num-results {
+    margin-top: 5px;
+}
+
+/* main body */
+#main-body .pagination{
+    margin: 8px;
+}
+
+.pagination > li > a
+{
+    background-color: #23272a;
+    color: white;
+    border-color: 	#bfc5c9;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+{
+    color: #626f7d;
+    background-color: #f8f9fa;
+    border-color: 	#bfc5c9;
+}
+
+#main-body img {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+#main-body .thumbnail {
+    display: block;
+    width: 150px;
+    height: 150px;
+    background-color: transparent;
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    object-fit: cover;
+}
+
+#main-body p {
+    margin-top: 5px;
+}
+
+#main-body li {
+    cursor: pointer;
+}
+
+#modal-title {
+    margin-left: 35%;
+}
+
+/* listings */
+.list-group .list-group-item:hover {
+    background-color: #d8dee3;
+}
+
+.list-group-item-1 {
+    background-color: #cbd1d6;
+}
+
+.list-group-item-2 {
+    background-color: #bfc5c9;
+}
+
+@media screen and (max-width: 1200px) {
+    main {
+        border-radius: none;
+        box-shadow: none;
+    }
+}
+
+/* no overflow */
+.no-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    display: block;
+}
+
+label {
+    font-size: 18px;
+}
+
+#price-filter {
+    font-size: 18px;
+}
+
+#apply-button {
+    font-size: 18px;
+}
+
+#modal-x-button {
+    color: white;
+}

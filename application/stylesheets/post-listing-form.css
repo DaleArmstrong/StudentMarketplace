@@ -1,0 +1,101 @@
+body {
+    font-family: Georgia, serif;
+    background-color: #23272a;
+    color: #FFFFFF;
+}
+
+.input-hidden{
+    height:0;
+    width:0;
+    visibility: hidden;
+    padding:0;
+    margin:0;
+    float:right;
+}
+
+.team-info {
+    text-align: center;
+}
+
+main {
+    display: grid;
+    background-color: #343a40;
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px 2px black;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#form-header {
+    color: white;
+    background-color: #23272a;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#form-body {
+    color: white;
+    background-color: #23272a;
+    padding-top: 4%;
+    padding-left: 7%;
+    padding-right: 7%;
+    padding-bottom: 4%;
+}
+
+#post-listing-form {
+    width: 100%;
+}
+
+#post-listing-form label {
+    font-size: 20px;
+}
+
+#post-listing-form input {
+    height: 35px;
+}
+
+#post-listing-form input, #post-listing-form .dropdown, #post-listing-form .form-field, #post-listing-form #image-preview  {
+    display: block;
+    margin-bottom: 20px;
+}
+
+#post-listing-form .form-field, #post-listing-form button {
+    width: 100%;
+    padding-left: 5px;
+}
+
+#post-listing-form #price-field, #post-listing-form #class-field {
+    width: 40%;
+}
+
+#post-listing-form #submit-button {
+    margin-top: 20px;
+    width: 30%;
+    font-size: 18px;
+    padding: 1px;
+}
+
+#image-preview * {
+    display: inline-block;
+}
+
+.thumbnail {
+    display: block;
+    overflow: hidden;
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+}
+
+.form-field {
+    font-size: 18px;
+}
+
+#post-listing-form button {
+    font-size: 18px;
+}
+
+.dropdown-menu {
+    font-size: 18px;
+}

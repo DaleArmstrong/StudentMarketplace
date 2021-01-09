@@ -1,0 +1,62 @@
+html, body {
+   height: 95%;
+}
+
+li {
+   text-align: left;
+}
+
+.input-hidden{
+    height:0;
+    width:0;
+    display: none;
+    visibility: hidden;
+    padding:0;
+    margin:0;
+    float:right;
+}
+
+.list-group-item-1 {
+    background-color: #cbd1d6;
+}
+
+.list-group-item-2 {
+    background-color: #bfc5c9;
+}
+
+.modal-content {
+    background-color: #343a40;
+    color: #FFFFFF;
+}
+
+.container-fluid {
+    min-height: 95%;
+    height:auto !important; /* cross-browser */
+    height: 95%; /* cross-browser */
+}
+
+#carousel-container {
+    text-align: center;
+    height: 550px;
+}
+
+#carousel-inner {
+    height: 450px;
+}
+
+#contact-button {
+    margin-right: 20px;
+}
+
+#item-info {
+    text-align: center;
+    margin-top: 4%;
+}
+
+#modal-title {
+    margin-left: 35%;
+}
+
+#modal-x-button {
+    color: white;
+}

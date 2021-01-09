@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GatorTrader</title>
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/profile.css" />
+    <!-- deferred javascript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous" defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js" defer></script>
+    <script src="/javascript/nav.js" defer></script>
+    <script src="/javascript/profile.js" defer></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4L1HTVDYJ9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-4L1HTVDYJ9');
+    </script>
+</head>
+
+<body>
+    <h2 class="team-info">SFSU Software Engineering Project CSC 648-848, Fall 2020. For Demonstration Only</h2>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark static-top" id="navId"></nav>
+    <!-- end navbar -->
+
+    <!-- content -->
+    <div class="container pl-1 pr-1">
+        <div class="box-border site-box text-center mb-4">
+            <h2 id="welcome-message">Welcome </h2>
+        </div>
+    </div>
+
+    <div class="container mb-2">
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-home" aria-selected="true">Profile</a>
+                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-listings" role="tab" aria-controls="nav-profile" aria-selected="false">Listings</a>
+                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-messages" role="tab" aria-controls="nav-contact" aria-selected="false">Messages</a>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="profile-settings">
+                    <div class="row">
+                      <div class="col-lg-2 profile-label">
+                        Email Address:
+                      </div>
+                      <div class="col field">
+                        <span id="user-email"></span><br>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-2 profile-label">
+                        Joined:
+                      </div>
+                      <div class="col field">
+                        <span id="user-joined"></span><br>
+                      </div>
+                    </div>
+
+                    <!-- Error Handling -->
+                    <div id="pwd-error-registered-holder">
+                      <p id="pwd-error-msg-registered">Current Password enter is not valid!</span></p>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-2 profile-label">
+                        Password:
+                      </div>
+                      <div class="col field">
+                        <span> [<a href="javascript:void(0);" onclick="swapChangePassword();">change password</a>]</span>
+                      </div>
+                    </div>
+                    <div class="hidden" id="change-password">
+                      <div class="row">
+                        <div class="col-lg-2 hidden-col"></div>
+                        <div class="col field">
+                          <form id="change-password-form" class="field">
+                            <div>Current Password</div>
+                            <input type="text" class="text-input-bar" id="current-password" placeholder="Current Password">
+                            <div class="form-alert" id="check-password-entered"></div>
+
+                            <div>Password</div>
+                            <input type="password" class="text-input-bar" id="new-password" placeholder="Password" onChange="checkPassword();">
+                            <div class="form-alert" id="check-pw-min-characters"></div>
+
+                            <div>Confirm Password</div>
+                            <input type="password" class="text-input-bar" id="new-password2" placeholder="Confirm Password" onChange="checkPassword();">
+                            <div class="form-alert" id="check-pw-match"></div>
+
+                            <div class="mt-3">
+                              <button class="btn btn-primary ml-1" id="cancel-change-password-button" onclick="hideChangePassword()">Cancel</button>
+                              <button class="btn btn-secondary float-right mr-1" id="change-password-button" type="submit" onclick="changePasswordOnClick(event);">Submit</button>
+                            </div>
+                            </form>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-2 profile-label">
+                        Deactivate Account:
+                      </div>
+                      <div class="col field">
+                        <span> [<a href="javascript:void(0);" onclick="swapDeactivateAccount();">deactivate account</a>]</span>
+                      </div>
+                    </div>
+                    <div class="hidden" id="deactivate-account">
+                      <div class="row">
+                        <div class="col-lg-2 hidden-col"></div>
+                        <div class="col field">
+                          <form id="deactivate-form" class="field">
+                            <div class="mb-2 text-center">
+                              Deactivate your Account
+                            </div>
+                            <div>
+                              Enter your password to continue:
+                            </div>
+                              <input type="text" class="text-input-bar" id="deactivate-current-password" placeholder="Password">
+                              <div class="form-alert" id="check-password-entered-deactivate"></div>
+                            <div class="mt-3">
+                              <button class="btn btn-primary ml-1" id="cancel-deactivate-button" onclick="hideDeactivateAccount()">Cancel</button>
+                              <button class="btn btn-secondary float-right mr-1" id="deactivate-button" type="submit" onclick="deactivateAccount(event);">Submit</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-listings" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <div id="listings"></div>
+            </div>
+            <div class="tab-pane fade" id="nav-messages" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <div id="messages"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

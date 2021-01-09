@@ -1,0 +1,117 @@
+body {
+    font-family: Georgia, serif;
+    background-color: #23272a;
+    color: #FFFFFF;
+}
+
+.purple-font {
+    color: #7289da;
+}
+
+.bg-dark-grey {
+    background-color: #2c2f33;
+}
+
+.bg-light-grey {
+    background-color: #99aab5;
+}
+
+.box-border {
+    border: 1px solid #99aab5;
+    border-radius: 4px;
+    background-color: #2c2f33;
+}
+
+.nav-link {
+    cursor: pointer;
+}
+
+.no-style {
+    text-decoration: none;
+}
+
+.team-info {
+    text-align: center;
+}
+
+#dropdown-button {
+    border: 1px solid rgb(21, 20, 22);
+    background-color: #343a40;
+    cursor: pointer;
+    border-color: white;
+}
+
+#dropdown-button:hover {
+    background-color: #44484c;
+}
+
+#search-button:hover {
+    background-color: #44484c;
+}
+
+#search-bar {
+    display: inline-block;
+    background-color: rgb(21, 20, 22);
+    color: rgb(210, 210, 210);
+    max-width: 700px;
+}
+
+.navbar {
+    margin-bottom: 5px;
+}
+
+#dropdown-category {
+    background-color: rgb(21, 20, 22);
+}
+
+#login-dropdown {
+    background-color: #343a40;
+}
+
+.category-item {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    padding-left: 5px;
+}
+
+.category-item:focus,
+.category-item:hover {
+    background-color: #44484c;
+}
+
+@media only screen and (max-width: 768px) {
+    #dropdown-hide {
+      display: none;
+    }
+
+    #login-dropdown {
+        display:block;
+        position: static;
+        float: none;
+        width: auto;
+        margin-top: 0;
+        background-color: transparent;
+        border: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+}
+
+/* add padding to nav bar to center -Vern */
+.input-group-prepend .category-item {
+    padding-left: 8%;
+}
+
+.navbar-nav {
+    font-size: 18px;
+}
+
+#search-bar {
+    font-size: 18px;
+}
+
+.navbar-brand {
+    font-size: 22px;
+    margin-right: 9%;
+}

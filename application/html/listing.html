@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GatorTrader - Listing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="/javascript/nav.js" defer></script>
+    <script src="/javascript/listing.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/listing.css" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4L1HTVDYJ9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-4L1HTVDYJ9');
+    </script>
+</head>
+
+<body>
+    <h2 class="team-info">SFSU Software Engineering Project CSC 648-848, Fall 2020. For Demonstration Only</h2>
+    <!-- Modal -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modal-title">Contact Seller</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span id="modal-x-button" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="from-text"></p>
+                    <p id="listing-text"></p>
+                    <textarea id="contact-text" name="text" placeholder="Please be respectful when messaging others."
+                        rows="15" style="width:100%" maxlength="210"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="event.stopPropagation(); sendMessage();">Send message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark static-top" id="navId"></nav>
+    <div class="container-fluid d-flex h-100">
+        <div class="row justify-content-center align-self-center w-100">
+            <div id="carousel-container" class="col-lg-4 col-md-5 col-sm-3 offset-1 text-center">
+                <div id="carousel" class="carousel slide" data-ride="carousel">
+                    <ol id="carousel-indicators" class="carousel-indicators">
+                    </ol>
+                    <div id="carousel-inner" class="carousel-inner">
+                    </div>
+                    <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            <div id="item-info" class="col-lg-4 col-md-5 col-sm-3 offset-1 text-center">
+                <ul class="list-group text-dark">
+                    <li class="list-group-item p-2 list-group-item-1">
+                        <h5 id="listing-name">
+                            <b>Name: </b>
+                        </h5>
+                    </li>
+                    <li class="list-group-item p-2 list-group-item-2">
+                        <h5 id="listing-description">
+                            <b>Description: </b>
+                        </h5>
+                    </li>
+                    <li class="list-group-item p-2 list-group-item-1">
+                        <h5 id="listing-price">
+                            <b>Price: </b>
+                        </h5>
+                    </li>
+                    <li id="course-item" class="list-group-item p-2 list-group-item-2 input-hidden">
+                        <h5 id="listing-course">
+                            <b>Subject/Course Number: </b>
+                        </h5>
+                    </li>
+                </ul>
+                <button type="button" id="contact-button" data-toggle="modal" data-target="#modal" onclick="event.stopPropagation(); openContactModal();" class="btn btn-block no-overflow"></button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
